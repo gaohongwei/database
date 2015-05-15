@@ -11,4 +11,5 @@ GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY PASSWORD @pwd WITH GRANT
 
 
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION ;
+SET PASSWORD FOR 'root'@'%' =  PASSWORD('root');
 flush previleges; 
