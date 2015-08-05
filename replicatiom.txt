@@ -1,0 +1,39 @@
+
+Configure Master MySQL server
+sudo nano /etc/my.cnf
+bind-address = X.X.X.X
+server-id = 1
+log_bin = /var/log/mysql/mysql-bin.log
+binlog_do_db = dbreplica
+
+bind-address – the server's IP address. An easy way to find your server's IP address is to execute the following command:
+ip addr show eth0|grep inet|awk '{print $2}'|cut -d / -f1
+server-id – unique ID which should not be used for another server withing the replication configuration
+log_bin – the slave server will copy all changes registered inside that log
+binlog_do_db – the name of the database which will be replicated
+
+sudo /etc/init.d/mysqld restart
+
+#grant privileges to the slave server
+mysql -u root -p
+GRANT REPLICATION SLAVE ON *.* TO 'slave'@'%' IDENTIFIED BY 'password';
+FLUSH PRIVILEGES;
+
+Configure Slave MySQL server
+mysql -p -u root
+mysql> CHANGE MASTER TO
+-&gt; MASTER_HOST='X.X.X.X',
+-&gt; MASTER_USER='slave',
+-&gt; MASTER_PASSWORD='password',
+-&gt; MASTER_LOG_FILE='mysql-bin.000001',
+-&gt; MASTER_LOG_POS=327;
+
+MASTER_HOST - the IP address of the Master server
+MASTER_USER - the MySQL user we created for replication
+MASTER_PASSWORD - the password for the replication user
+MASTER_LOG_FILE - the binary log that we recorded from the Master server status earlier
+MASTER_LOG_POS - the position the Master was in that we recorded.
+
+START SLAVE;
+
+SHOW SLAVE STATUS\G;
