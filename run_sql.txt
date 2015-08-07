@@ -1,1 +1,9 @@
 
+#########Run sql as heredoc
+mysql -uroot -ppassword <<EOF
+show databases;
+quit
+EOF
+
+#########Run sql in a file
+mysql -uroot -ppassword mydb < five9cms_staging.sql
