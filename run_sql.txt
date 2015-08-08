@@ -8,7 +8,11 @@ EOF
 #########Run sql in a file
 mysql -uroot -ppassword mydb < five9cms_staging.sql
 
-#########Run command on remote host
+#########Run local script on remote host
+ssh kwei@172.16.16.137 'bash -s' < local_script.sh
+ssh kwei@172.16.16.137 'bash'    < local_script.sh
+You shouldn't have to copy the script to the remote server to run it.
+#########Run commands on remote host
 ssh kwei@172.16.16.137 "hostname;ifconfig"
 ssh kwei@172.16.16.137 "xx"
 echo $?
