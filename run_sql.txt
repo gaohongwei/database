@@ -7,3 +7,12 @@ EOF
 
 #########Run sql in a file
 mysql -uroot -ppassword mydb < five9cms_staging.sql
+
+#########Run command on remote host
+ssh kwei@172.16.16.137 "hostname;ifconfig"
+ssh kwei@172.16.16.137 "xx"
+echo $?
+
+ssh kwei@172.16.16.137 <<ENDSSH
+hostname;ifconfig
+ENDSSH
