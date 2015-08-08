@@ -23,7 +23,12 @@ You shouldn't have to copy the script to the remote server to run it.
 ssh kwei@172.16.16.137 "hostname;ifconfig"
 ssh kwei@172.16.16.137 "xx"
 echo $?
-
+#########Run commands on remote host
 ssh kwei@172.16.16.137 <<ENDSSH
 hostname;ifconfig
 ENDSSH
+######### ssh-copy-id
+login=kwei@172.16.16.136
+#ssh-copy-id $login
+cat ~/.ssh/id_rsa.pub | ssh $login 'cat >> ~/.ssh/authorized_keys;chmod 700 ~/.ssh; chmod 640 ~/.ssh/authorized_keys'
+
