@@ -29,6 +29,7 @@ hostname;ifconfig
 ENDSSH
 ######### ssh-copy-id
 login=kwei@172.16.16.136
+#ssh-keygen -t rsa
 #ssh-copy-id $login
 cat ~/.ssh/id_rsa.pub | ssh $login 'cat >> ~/.ssh/authorized_keys;chmod 700 ~/.ssh; chmod 640 ~/.ssh/authorized_keys'
 
