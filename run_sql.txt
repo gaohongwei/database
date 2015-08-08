@@ -4,6 +4,8 @@ mysql -uroot -ppassword <<EOF
 show databases;
 quit
 EOF
+#########Run sql statement
+mysql -uroot -pdbroot -e "show databases"
 
 #########Run sql in a file
 mysql -uroot -ppassword mydb < five9cms_staging.sql
