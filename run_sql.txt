@@ -27,6 +27,8 @@ echo $?
 ssh kwei@172.16.16.137 <<ENDSSH
 hostname;ifconfig
 ENDSSH
+#########Run commands on remote host as sudo
+ssh -t kwei@172.16.16.154 "sudo bash -c 'id; pwd; id'"
 ######### ssh-copy-id
 login=kwei@172.16.16.136
 #ssh-keygen -t rsa
