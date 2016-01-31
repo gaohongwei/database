@@ -13,3 +13,10 @@ GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY PASSWORD @pwd WITH GRANT
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION ;
 SET PASSWORD FOR 'root'@'%' =  PASSWORD('root');
 flush previleges; 
+
+
+Config
+/etc/mysql/mysql.conf.d/mysqld.cnf
+bind-adress= 172.16.16.169
+
+sudo service mysql restart
