@@ -20,3 +20,5 @@ Config
 bind-adress= 172.16.16.169
 
 sudo service mysql restart
+
+telnet 127.0.0.1 3306 
