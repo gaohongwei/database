@@ -1,0 +1,18 @@
+##### Mac
+brew info mysql
+brew services restart mysql
+brew services start mysql
+brew services stop mysql
+
+sudo mysqld_safe --skip-grant-tables;
+
+
+brew remove mysql
+brew cleanup
+brew install mysql
+
+brew services start mysql
+mysql -uroot
+
+CREATE USER 'myx'@'localhost' IDENTIFIED BY 'pwd';
+GRANT ALL PRIVILEGES ON * . * TO 'myx'@'localhost';
