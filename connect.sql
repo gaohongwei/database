@@ -42,3 +42,14 @@ Reset password
   GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY PASSWORD @pwd WITH GRANT OPTION ;
   GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION ;
   flush previleges;
+
+# Create dbroot for RoR
+  USE mysql;
+  CREATE USER 'dbroot'@'localhost' IDENTIFIED BY '';
+  GRANT ALL PRIVILEGES ON *.* TO 'dbroot'@'localhost';
+  UPDATE user SET plugin='mysql_native_password' WHERE User='dbroot';
+  show grants for 'dbroot'@'localhost';
+  FLUSH PRIVILEGES;
+  exit;
+
+  service mysql restart
