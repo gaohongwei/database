@@ -29,10 +29,10 @@ Grant
   service mysql restart
 
 Create user
-  CREATE USER 'root'@'localhost' IDENTIFIED BY '';
+  CREATE USER 'dbroot'@'localhost' IDENTIFIED BY '';
   select user,host,plugin from user;
-  show grants for 'root'@'localhost';
-  GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost';
+  show grants for 'dbroot'@'localhost';
+  GRANT ALL PRIVILEGES ON *.* TO 'dbroot'@'localhost';
 
 Reset password
   SET PASSWORD FOR 'root'@'%' =  PASSWORD('root');
