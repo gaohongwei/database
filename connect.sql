@@ -16,8 +16,9 @@ Connect/default login
   +------------------+-----------+-----------------------+
 
 Use password authentication
+    USE mysql;
     UPDATE user SET plugin='mysql_native_password' WHERE User='root';
-    UPDATE user SET plugin='auth_socket' WHERE User='root';
+    #####UPDATE user SET plugin='auth_socket' WHERE User='root';
     FLUSH PRIVILEGES;
     exit;
 brew services restart mysql
