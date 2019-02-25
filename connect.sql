@@ -20,13 +20,13 @@ Use password authentication
     UPDATE user SET plugin='auth_socket' WHERE User='root';
     FLUSH PRIVILEGES;
     exit;
-  service mysql restart
+brew services restart mysql
 
 Grant
     GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost';
     FLUSH PRIVILEGES;
     exit;
-  service mysql restart
+brew services restart mysql
 
 Create user
   CREATE USER 'dbroot'@'localhost' IDENTIFIED BY '';
@@ -52,4 +52,4 @@ Reset password
   FLUSH PRIVILEGES;
   exit;
 
-  service mysql restart
+brew services restart mysql
