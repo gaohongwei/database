@@ -1,0 +1,5 @@
+Slower
+  SELECT * FROM large ORDER BY id LIMIT 10000, 30 
+
+Faster
+  SELECT * FROM large WHERE id >  10000 ORDER BY id LIMIT 30 
