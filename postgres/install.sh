@@ -1,5 +1,5 @@
 Install
-  apt-get install postgresql postgresql-contrib
+  apt-get install postgresql postgresql-contrib libpq-dev -y
 
   psql -V 
 
