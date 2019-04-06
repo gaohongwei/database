@@ -13,6 +13,8 @@ start the database server using:
   /usr/lib/postgresql/10/bin/pg_ctl -D /var/lib/postgresql/10/main -l logfile start
 
 login
+  # two steps
+  # su - postgres, then run psql
   sudo -u postgres psql
 
 Display
