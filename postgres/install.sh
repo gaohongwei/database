@@ -33,3 +33,8 @@ Display
   \dS: Display all system tables.
   \du: Display all users.
   \x auto|on|off: Toggle|On|Off expanded output mode.
+
+
+Display Table(s)
+  \d: Display all tables, indexes, views, and sequences.
+  \d departments
