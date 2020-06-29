@@ -20,11 +20,14 @@ login
   # two steps
   # su - postgres, then run psql
   sudo -u postgres psql
+  List & Display
+  \l list database
+  \c dbname
+  \d: list all tables, indexes, views, and sequences.
+  \d table_name
 
-Display
   \?: show all psql commands.
   \h sql-command: show syntax on SQL command.
-  \c dbname [username]: Connect to database, with an optional username (or \connect).
 
   Display Commands: You can append + to show more details.
   \l: List all database (or \list).
@@ -37,8 +40,3 @@ Display
   \dS: Display all system tables.
   \du: Display all users.
   \x auto|on|off: Toggle|On|Off expanded output mode.
-
-
-Display Table(s)
-  \d: Display all tables, indexes, views, and sequences.
-  \d departments
