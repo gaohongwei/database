@@ -12,6 +12,10 @@ Start PostgreSQL.
 start the database server using:
   /usr/lib/postgresql/10/bin/pg_ctl -D /var/lib/postgresql/10/main -l logfile start
 
+Connection string
+  postgres://{user}:{password}@{hostname}:{port}/{database-name}
+  postgresql://postgres@postgres/postgres
+
 login
   # two steps
   # su - postgres, then run psql
