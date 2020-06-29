@@ -25,6 +25,7 @@ login
   \c dbname
   \d: list all tables, indexes, views, and sequences.
   \d table_name
+  \q quit
 
   \?: show all psql commands.
   \h sql-command: show syntax on SQL command.
